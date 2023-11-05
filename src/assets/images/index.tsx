@@ -1,11 +1,9 @@
 import logoblack from './logo-black.svg'
-import logocolor from './logo-color.svg'
 import logonobackground from './logo-no-background.svg'
 import logowhite from './logo-white.svg'
 
 export{
     logoblack,
-    logocolor,
     logonobackground,
     logowhite,}
 

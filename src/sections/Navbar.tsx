@@ -43,7 +43,7 @@ const Navbar = () => {
       </ul>
       </div>
       <div className="flex">
-      <a href="/"  ><img className="w-12 h-12"  src={ logonobackground}  alt="logo" /></a>
+      <a href="/"  ><img className="w-32 h-24"  src={ logonobackground}  alt="logo" /></a>
       </div>
       <div className="hidden text-xs items-bottom md:flex ">
         <div className="text-sm leading-5 ">
