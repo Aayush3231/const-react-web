@@ -43,7 +43,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <BsChevronLeft/>
       </button></div>
       <div className='em'>
-      <div className="embla__viewport  sm:h-[--slide-height] h-40" ref={emblaRef}>
+      <div className="embla__viewport relative  sm:h-[--slide-height] h-40" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
@@ -58,12 +58,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             </div>
           ))}
         </div>
-      </div>
         <div className="embla__progress hidden sm:flex">
         <div
           className="embla__progress__bar"
           style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}
         />
+      </div>
       </div>
       </div>
       <div className='px-2 justify-center hidden sm:flex'> 

@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         burford:"burfordbase",
         spacegrotesk:"spacegrotesk",
+        starlight:"starlight"
       },
     },
   },

@@ -11,7 +11,7 @@ const Navbar = () => {
   
   return (
     <header className="w-full px-4 pt-4">
-    <nav className="flex items-center px-2 gap-1 h-1/6 justify-between border-b border-slate-200 mx-6 py-3 sm:mx-10  sm:py-12">
+    <nav className="flex items-center px-2 gap-1 h-1/6 justify-between border-b border-slate-200 mx-6 py-3 sm:mx-10  sm:py-5">
       {/* hamburger button  start*/}
       <div className="flex justify-start items-center w-24 xl:w-0 lg:hidden">
       <div className="hidden max-lg:flex max-lg:flex-col">
