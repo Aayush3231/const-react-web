@@ -7,7 +7,7 @@ const OPTIONS: EmblaOptionsType = { containScroll: 'trimSnaps' }
     const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 const Showcase = () => {
   return (
-    <div className="w-4/5">
+    <div className="w-full px-6">
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
     </div>
   )

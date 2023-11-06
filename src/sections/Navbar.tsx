@@ -18,15 +18,15 @@ const Navbar = () => {
       <button className="flex justify-between gap-1 items-center" 
       onClick={() => setIsOpen(!isOpen)}>
       {isOpen ? (
-        <IconContext.Provider value={{ size: '0.8rem', }}>
+        <IconContext.Provider value={{ size: '0.9rem', }}>
                 <RxCross1 />
               </IconContext.Provider>
           ) : (
-            <IconContext.Provider value={{size:'0.8rem',}}>
+            <IconContext.Provider value={{size:'0.9rem',}}>
             <GiHamburgerMenu />
             </IconContext.Provider>
           )}
-      <span className="text-sm">Menu</span>
+      <span className="text-sm font-spacegrotesk">Menu</span>
       </button>
       </div>
       </div>
