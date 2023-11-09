@@ -3,7 +3,7 @@ import { EmblaOptionsType } from 'embla-carousel-react'
 import EmblaCarousel from "../components/EmblaCarousel"
 
 const OPTIONS: EmblaOptionsType = { containScroll: 'trimSnaps' }
-    const SLIDE_COUNT = 5
+    const SLIDE_COUNT = 4
     const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 const Showcase = () => {
   return (
