@@ -83,7 +83,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((index:any) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__text">
-                <span className='bg-teal-500 border-4 py-2 rounded-md border-cyan-800 text-sm sm:text-3xl text-slate-700'>{contentByIndex(index)}</span>
+                <span className='bg-teal-500 border-4 py-2 rounded-md border-cyan-800 text-sm sm:text-3xl text-slate-700 font-burford'>{contentByIndex(index)}</span>
               </div>
               <div className="embla__parallax">
                 <div
