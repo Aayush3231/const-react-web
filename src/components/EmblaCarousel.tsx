@@ -79,11 +79,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       </button></div>
       <div className='em'>
       <div className="embla__viewport relative  sm:h-[--slide-height] h-40" ref={emblaRef}>
-        <div className="embla__container ">
+        <div className="embla__container first:text-zinc-700 ">
           {slides.map((index:any) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__text">
-                <span className='bg-teal-500 border-4 py-2 rounded-md border-cyan-800 text-sm sm:text-3xl text-slate-700 font-burford'>{contentByIndex(index)}</span>
+              <div className="embla__slide__text block">
+                  <h4 className='py-2 pt-5 text-sm sm:text-4xl text-slate-200 font-burford absolute top-60 right-7 left-6'>
+                    {contentByIndex(index)[0].title}
+                  </h4>
+                  <p className='py-2 pt-6 text-xl  text-slate-200 font-spacegrotesk absolute top-72 right-7 left-6'>
+                    {contentByIndex(index)[0].subtext}
+                  </p>
+                  <span className='py-2 pt-5 text-sm text-slate-200 font-spacegrotesk absolute top-52 right-6 left-6'>
+                  {contentByIndex(index)[0].smaller}
+                  </span>
               </div>
               <div className="embla__parallax">
                 <div
@@ -95,7 +103,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   }}
                 >
                   <img
-                    className="embla__slide__img embla__parallax__img sm:h-[--slide-height] h-40"
+                    className="embla__slide__img embla__parallax__img sm:h-[--slide-height] h-40 brightness-50"
                     src={imageByIndex(index)}
                     alt="Carousel images"
                   />

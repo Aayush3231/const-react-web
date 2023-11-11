@@ -73,9 +73,25 @@ src: url("../src/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
   text-align: center;
   pointer-events: none;
 }
-.embla__slide__text > span {
-  position: absolute;
-  top: 10rem;
-  left: 10rem;
-  right: 4rem;
+
+
+#parallax-box .parallax {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#parallax-box .parallax-one {
+  background-image: url('./assets/images/side-images.jpg');
+}
+
+#parallax-box .parallax-one .card{
+  background-color: #fefefe;
 }

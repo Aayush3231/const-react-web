@@ -11,12 +11,45 @@ export const infos=[
 ] //navbar contacts content
 
 //CarouselContents
-const content1="Hello This is a sample text in content 1";
-const content2="Hello This is a sample text in content 2";
-const content3="Hello This is a sample text in content 3";
-const content4="Hello This is a sample text in content 4";
+interface Content {
+  title: string;
+  subtext: string;
+  smaller: string;
+}
 
-export const contents : string[] = [content1,content2,content3,content4]
- 
-const contentByIndex = (index:any):string =>contents[index % contents.length]
-export default contentByIndex
+const content1: Content[] = [
+  {
+    title: 'We Provide Outstanding Construction Services',
+    subtext: 'We have provided complete remodeling and construction solutions for small as well as big structures',
+    smaller: 'Residental And Commercial Buildings'
+  }
+];
+
+const content2: Content[] = [
+  {
+    title: 'This is for second Slide',
+    subtext: 'This contains some small text',
+    smaller: 'Some smaller text'
+  }
+];
+
+const content3: Content[] = [
+  {
+    title: 'This is for third Slide',
+    subtext: 'This contains some small text',
+    smaller: 'Some smaller text'
+  }
+];
+
+const content4: Content[] = [
+  {
+    title: 'This is for fourth Slide',
+    subtext: 'This contains some small text',
+    smaller: 'Some smaller text'
+  }
+];
+
+export const contents: Content[][] = [content1, content2, content3, content4];
+
+const contentByIndex = (index: number): Content[] => contents[index % contents.length];
+export default contentByIndex;

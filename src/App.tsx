@@ -1,11 +1,10 @@
 
-import Banner from "./sections/Banner"
-import InsideOurCompany from "./sections/InsideOurCompany"
 import Navbar from "./sections/Navbar"
-import OurDisciplines from "./sections/OurDisciplines"
+import ContactForm from "./sections/ContactForm"
 import OurStory from "./sections/OurStory"
-import OurWork from "./sections/OurWork"
 import Showcase from "./sections/Showcase"
+import Services from "./sections/Services"
+import AboutUs from "./sections/AboutUs"
 
 function App() {
   
@@ -15,17 +14,14 @@ function App() {
       <section className="flex justify-center">
         <Showcase/>
       </section>
-      <section className="sm:flex justify-center sm:pt-20 hidden ">
-        <Banner/>
-      </section>
-       <section className="px-5 py-5 md:px-10 md:py-10">
-        <OurWork/>
+      <section className="px-5 py-5 md:px-10 md:py-10">
+        <AboutUs/>
       </section>
       <section className="px-5 py-5 md:px-10 md:py-10">
-        <InsideOurCompany/>
+        <Services/>
       </section>
-      <section className="px-5 py-5 md:px-10 md:py-10">
-        <OurDisciplines/>
+      <section className="px-5 py-5 md:px-10 md:py-10 flex justify-center">
+        <ContactForm/>
       </section>
       <section className="px-5 py-5 md:px-10 md:py-10">
         <OurStory/>
