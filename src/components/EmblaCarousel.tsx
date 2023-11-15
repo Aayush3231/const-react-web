@@ -4,6 +4,7 @@ import imageByIndex from '../assets/images'
 import { BsChevronLeft, BsChevronRight }from 'react-icons/bs'
 import { flushSync } from 'react-dom'
 import contentByIndex from '../constants'
+import { motion } from 'framer-motion'
 
 
 const TWEEN_FACTOR = 1.2
@@ -82,16 +83,43 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container first:text-zinc-700 ">
           {slides.map((index:any) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__text block">
-                  <h4 className='py-2 pt-5 text-sm sm:text-4xl text-slate-200 font-burford absolute top-60 right-7 left-6'>
+               <div className="embla__slide__text">
+                <motion.div className="heading"
+                initial={{ opacity: 0, scale: 0.3 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 2,
+                  delay: 1.5,
+                  ease: [0, 0.71, 0.2, 1.01]
+                }}>
+                  <h4 className='py-2 pt-5 text-sm sm:text-4xl text-slate-200 font-burford absolute top-52 right-7 left-6'>
                     {contentByIndex(index)[0].title}
                   </h4>
-                  <p className='py-2 pt-6 text-xl  text-slate-200 font-spacegrotesk absolute top-72 right-7 left-6'>
+                </motion.div>
+                <motion.div className='subtext'
+                initial={{ opacity: 0, scale: 0.3 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 4,
+                  delay: 2.5,
+                  ease: [0, 0.71, 0.2, 1.01]
+                }}>
+                  <p className='py-2 pt-6 text-xl  text-slate-200 font-spacegrotesk absolute top-64 right-7 left-6'>
                     {contentByIndex(index)[0].subtext}
                   </p>
-                  <span className='py-2 pt-5 text-sm text-slate-200 font-spacegrotesk absolute top-52 right-6 left-6'>
+                </motion.div>
+                <motion.div className='littletext'
+                initial={{ opacity: 0, scale: 0.3 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 1,
+                  delay:1,
+                  ease: [0, 0.71, 0.2, 1.01]
+                }}>
+                  <span className='py-2 pt-5 text-sm text-slate-200 font-spacegrotesk absolute top-44 right-6 left-6'>
                   {contentByIndex(index)[0].smaller}
                   </span>
+                </motion.div>
               </div>
               <div className="embla__parallax">
                 <div

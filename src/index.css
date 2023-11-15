@@ -20,7 +20,7 @@ src: url("../src/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
 
 .embla {
   --slide-spacing: 1rem;
-  --slide-size: 90%;
+  --slide-size: 100%;
   --slide-height:30rem;
   padding: 0.2rem;
 }
@@ -76,8 +76,6 @@ src: url("../src/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
 
 
 #parallax-box .parallax {
-  padding-top: 200px;
-  padding-bottom: 200px;
   overflow: hidden;
   position: relative;
   width: 100%;

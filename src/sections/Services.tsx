@@ -6,20 +6,9 @@ const Services = () => {
   return (
     <div className="grid gap-5 lg:flex lg:gap-20 lg:px-20 justify-center">
       <div className="image-container">
-        <motion.div
-          className="imagelefttside"
-          initial={{y: 100}}
-          whileInView={{ y: 50,
-            rotate: 10,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
-              duration: 1
-            }}}
-          viewport={{ once: false, amount: 0.6}}
-          >
+        <div className="imagelefttside">
           <img className=" w-72" src={sideleft1} alt="Side Left 1" />
-        </motion.div>
+        </div>
       </div>
         <motion.div 
         className="pt-16 sm:w-2/6 w-full "

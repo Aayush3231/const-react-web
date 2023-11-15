@@ -20,7 +20,7 @@ function App() {
       <section className="px-5 py-5 md:px-10 md:py-10">
         <Services/>
       </section>
-      <section className="px-5 py-5 md:px-10 md:py-10 flex justify-center">
+      <section className="p flex justify-center">
         <ContactForm/>
       </section>
       <section className="px-5 py-5 md:px-10 md:py-10">
