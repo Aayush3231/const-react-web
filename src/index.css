@@ -72,6 +72,34 @@ src: url("../src/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
   position:relative;
   text-align: center;
   pointer-events: none;
+
+  .heading1{
+    position: absolute;
+    top:13rem;
+    right:1.75rem;
+    left:1.5rem;
+    }
+    
+  .heading2{
+    position: absolute;
+    top:13rem;
+    right:1.75rem;
+    left:1.5rem;
+    }
+    
+  .heading3{
+    position: absolute;
+    top:13rem;
+    right:1.75rem;
+    left:1.5rem;
+    }
+
+  .heading4{
+    position: absolute;
+    top:13rem;
+    right:1.75rem;
+    left:1.5rem;
+    }
 }
 
 
@@ -93,3 +121,4 @@ src: url("../src/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
 #parallax-box .parallax-one .card{
   background-color: #fefefe;
 }
+

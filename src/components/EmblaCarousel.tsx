@@ -3,7 +3,7 @@ import useEmblaCarousel, { EmblaCarouselType, EmblaOptionsType } from 'embla-car
 import imageByIndex from '../assets/images'
 import { BsChevronLeft, BsChevronRight }from 'react-icons/bs'
 import { flushSync } from 'react-dom'
-import contentByIndex from '../constants'
+import contentByIndex, { contents } from '../constants'
 import { motion } from 'framer-motion'
 
 
@@ -70,7 +70,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     })
     emblaApi.on('reInit', onScroll)
   }, [emblaApi, onScroll])
-
+  const getContentIndex = (index:number) => index % contents.length;
 
   return (
     <div className="embla flex items-center justify-center">
@@ -79,12 +79,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <BsChevronLeft/>
       </button></div>
       <div className='em'>
-      <div className="embla__viewport relative  sm:h-[--slide-height] h-40" ref={emblaRef}>
+      <div className="embla__viewport relative  sm:h-[--slide-height] h-full" ref={emblaRef}>
         <div className="embla__container first:text-zinc-700 ">
-          {slides.map((index:any) => (
+          {slides.map((index:number) => (
             <div className="embla__slide" key={index}>
-               <div className="embla__slide__text">
-                <motion.div className="heading"
+               <div className="embla__slide__text top-[-5rem] sm:top-0">
+                <motion.div className={`heading${getContentIndex(index) + 1}`}
                 initial={{ opacity: 0, scale: 0.3 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
@@ -92,11 +92,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   delay: 1.5,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}>
-                  <h4 className='py-2 pt-5 text-sm sm:text-4xl text-slate-200 font-burford absolute top-52 right-7 left-6'>
+                  <h4 className='py-2 pt-5 text-lg sm:text-4xl text-slate-200 font-burford'>
                     {contentByIndex(index)[0].title}
                   </h4>
                 </motion.div>
-                <motion.div className='subtext'
+                <motion.div className={`subtext${getContentIndex(index) + 1}`}
                 initial={{ opacity: 0, scale: 0.3 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
@@ -104,7 +104,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   delay: 2.5,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}>
-                  <p className='py-2 pt-6 text-xl  text-slate-200 font-spacegrotesk absolute top-64 right-7 left-6'>
+                  <p className='py-2 pt-6 text-sm sm:text-xl  text-slate-200 font-spacegrotesk absolute top-64 right-7 left-6'>
                     {contentByIndex(index)[0].subtext}
                   </p>
                 </motion.div>
@@ -116,7 +116,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   delay:1,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}>
-                  <span className='py-2 pt-5 text-sm text-slate-200 font-spacegrotesk absolute top-44 right-6 left-6'>
+                  <span className='py-2 pt-5 text-xs sm:text-sm text-slate-200 font-spacegrotesk absolute top-44 right-6 left-6'>
                   {contentByIndex(index)[0].smaller}
                   </span>
                 </motion.div>
@@ -131,7 +131,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   }}
                 >
                   <img
-                    className="embla__slide__img embla__parallax__img sm:h-[--slide-height] h-40 brightness-50"
+                    className="embla__slide__img embla__parallax__img sm:h-[--slide-height] h-full brightness-50"
                     src={imageByIndex(index)}
                     alt="Carousel images"
                   />
