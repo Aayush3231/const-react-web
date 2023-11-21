@@ -89,9 +89,7 @@ const ImageGallery = () => {
 
   const currentImage = images[selectedImage];
   const nextIndex = (selectedImage + 1) % images.length;
-  const nextImage = images[nextIndex] || currentImage;
   const prevIndex = (selectedImage + images.length - 1) % images.length;
-  const prevImage = images[prevIndex] || currentImage;
 
   return (
     <div className="">
