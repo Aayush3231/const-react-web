@@ -1,10 +1,11 @@
 
 import Navbar from "./sections/Navbar"
 import ContactForm from "./sections/ContactForm"
-import OurStory from "./sections/OurStory"
+import ImageGallery from "./sections/ImageGallery"
 import Showcase from "./sections/Showcase"
 import Services from "./sections/Services"
 import AboutUs from "./sections/AboutUs"
+import Footer from "./sections/Footer"
 
 function App() {
   
@@ -24,7 +25,10 @@ function App() {
         <ContactForm/>
       </section>
       <section className="px-5 py-5 md:px-10 md:py-10">
-        <OurStory/>
+        <ImageGallery/>
+      </section>
+      <section >
+        <Footer/>
       </section>
     </main>
   )

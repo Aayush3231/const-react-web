@@ -1,7 +1,6 @@
 import logoblack from './logo-black.svg'
 import logonobackground from './logo-no-background.svg'
 import logowhite from './logo-white.svg'
-import banner from './banner.jpg'
 import sideright1 from './side-right.jpg'
 import sideleft1 from './side-left.jpg'
 import sideimages1 from './side-images.jpg'
@@ -10,7 +9,6 @@ export{
     logoblack,
     logonobackground,
     logowhite,
-    banner,
     sideright1,
     sideleft1,
     sideimages1,

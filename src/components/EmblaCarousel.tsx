@@ -4,7 +4,9 @@ import imageByIndex from '../assets/images'
 import { BsChevronLeft, BsChevronRight }from 'react-icons/bs'
 import { flushSync } from 'react-dom'
 import contentByIndex, { contents } from '../constants'
-import { motion } from 'framer-motion'
+import { motion} from 'framer-motion'
+import { InView } from 'react-intersection-observer'
+
 
 
 const TWEEN_FACTOR = 1.2
@@ -84,18 +86,25 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((index:number) => (
             <div className="embla__slide" key={index}>
                <div className="embla__slide__text top-[-5rem] sm:top-0">
-                <motion.div className={`heading${getContentIndex(index) + 1}`}
-                initial={{ opacity: 0, scale: 0.3 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 2,
-                  delay: 1.5,
-                  ease: [0, 0.71, 0.2, 1.01]
-                }}>
-                  <h4 className='py-2 pt-5 text-lg sm:text-4xl text-slate-200 font-burford'>
-                    {contentByIndex(index)[0].title}
-                  </h4>
-                </motion.div>
+               <InView>
+                {({ ref, inView }) => (
+                  <motion.div
+                    className={`heading${getContentIndex(index) + 1}`}
+                    initial={{ opacity: 0, scale: 0.1 }}
+                    animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0 }}
+                    transition={{
+                      duration: 1.4,
+                      delay: 0.5,
+                      ease: [0, 0.71, 0.2, 1.01],
+                    }}
+                    ref={ref}
+                  >
+                    <h4 className='py-2 pt-5 text-lg sm:text-4xl text-slate-200 font-burford'>
+                      {contentByIndex(index)[0].title}
+                    </h4>
+                  </motion.div>
+                )}
+              </InView>
                 <motion.div className={`subtext${getContentIndex(index) + 1}`}
                 initial={{ opacity: 0, scale: 0.3 }}
                 animate={{ opacity: 1, scale: 1 }}
