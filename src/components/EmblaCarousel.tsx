@@ -4,7 +4,7 @@ import imageByIndex from '../assets/images'
 import { BsChevronLeft, BsChevronRight }from 'react-icons/bs'
 import { flushSync } from 'react-dom'
 import contentByIndex, { contents } from '../constants'
-import { motion} from 'framer-motion'
+import { motion,AnimatePresence} from 'framer-motion'
 import { InView } from 'react-intersection-observer'
 
 
@@ -86,17 +86,24 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((index:number) => (
             <div className="embla__slide" key={index}>
                <div className="embla__slide__text top-[-5rem] sm:top-0">
+                <AnimatePresence
+                initial={false}
+                mode="popLayout"
+                onExitComplete={()=>null}
+                >
                <InView>
                 {({ ref, inView }) => (
                   <motion.div
                     className={`heading${getContentIndex(index) + 1}`}
-                    initial={{ opacity: 0, scale: 0.1 }}
+                    initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0 }}
+                    exit={{opacity:0,scale:0}}
                     transition={{
                       duration: 1.4,
                       delay: 0.5,
                       ease: [0, 0.71, 0.2, 1.01],
                     }}
+                    
                     ref={ref}
                   >
                     <h4 className='py-2 pt-5 text-lg sm:text-4xl text-slate-200 font-burford'>
@@ -105,12 +112,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   </motion.div>
                 )}
               </InView>
+              </AnimatePresence>
+              
                 <motion.div className={`subtext${getContentIndex(index) + 1}`}
                 initial={{ opacity: 0, scale: 0.3 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                  duration: 4,
-                  delay: 2.5,
+                  duration: 2,
+                  delay: 1.3,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}>
                   <p className='py-2 pt-6 text-sm sm:text-xl  text-slate-200 font-spacegrotesk absolute top-64 right-7 left-6'>
@@ -122,13 +131,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
                   duration: 1,
-                  delay:1,
+                  delay:1.1,
                   ease: [0, 0.71, 0.2, 1.01]
                 }}>
                   <span className='py-2 pt-5 text-xs sm:text-sm text-slate-200 font-spacegrotesk absolute top-44 right-6 left-6'>
                   {contentByIndex(index)[0].smaller}
                   </span>
                 </motion.div>
+                
               </div>
               <div className="embla__parallax">
                 <div
