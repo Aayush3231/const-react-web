@@ -91,7 +91,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 mode="popLayout"
                 onExitComplete={()=>null}
                 >
-               <InView>
+               <InView triggerOnce>
                 {({ ref, inView }) => (
                   <motion.div
                     className={`heading${getContentIndex(index) + 1}`}
