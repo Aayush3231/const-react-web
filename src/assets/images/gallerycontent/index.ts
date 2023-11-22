@@ -18,14 +18,14 @@ export const images: GalleryImage[]= [
     src: galleryimage1,
     original: galleryimage1,
     width: 320,
-    height: 170,
+    height: 212,
     caption: "High Rise Skyscrapers in Blue Tint",
   },
   {
     src: galleryimage2,
     original: galleryimage2,
     width: 320,
-    height: 174,
+    height: 180,
     tags: [
       { value: "Skyscrapers", title: "buildings" },
       { value: "london", title: "city" },
@@ -36,7 +36,7 @@ export const images: GalleryImage[]= [
     src: galleryimage3,
     original: galleryimage3,
     width: 320,
-    height: 154,
+    height: 212,
     tags: [
       { value: "Apartment", title: "buildings" }
     ],
@@ -45,15 +45,15 @@ export const images: GalleryImage[]= [
   {
     src: galleryimage4,
     original: galleryimage4,
-    width: 268,
-    height: 130,
+    width: 320,
+    height: 180,
     caption: "An Apartment with grey and orange paint",
   },
   {
     src: galleryimage5,
     original: galleryimage5,
-    width: 350,
-    height: 190,
+    width: 320,
+    height: 200,
     tags: [
       { value: "Brick House", title: "buildings" }
     ],
@@ -82,8 +82,8 @@ export const images: GalleryImage[]= [
   {
     src: galleryimage9,
     original: galleryimage9,
-    width: 300,
-    height: 160,
+    width: 320,
+    height: 180,
     caption: "An Commercial Complex Building",
   },
   ];
