@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import {RxCross1} from 'react-icons/rx';
 import { IconContext } from "react-icons";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +35,9 @@ const Navbar = () => {
       <ul className="flex  flex-inital  items-center max-lg:hidden px-2 ">
     {navLinks.map((item:any)=>(
       <li className="flex text-sm font-normal items-center max-lg:hidden px-4 transition duration-300 border-r-2 h-5 border-blue-700 last:border-0" key={item.label}>
-      <a className="font-spacegrotesk" href={item.href}>
+      <Link className="font-spacegrotesk" to={item.href}>
       {item.label}
-      </a>
+      </Link>
      </li>
     ))}
       </ul>
@@ -48,8 +48,9 @@ const Navbar = () => {
       <div className="hidden text-xs items-bottom md:flex ">
         <div className="text-sm leading-5 ">
           {infos.map((item:any)=>(
+            <>
             <p className="text-blue-500 font-semibold font-spacegrotesk">{item.title}<a className="text-black font-normal font-spacegrotesk" href={item.href}>{item.label}</a>
-            </p>
+            </p></>
           ))}
         </div>
       </div>
@@ -60,12 +61,12 @@ const Navbar = () => {
       <ul className="hidden justify-center font-spacegrotesk  items-center max-lg:flex max-lg:flex-col ">
     {navLinks.map((item:any)=>(
       <li key={item.label}>
-      <a 
-      href={item.href}
+      <Link
+      to={item.href}
       className="text-md font-normal max-lg:flex hidden px-3 py-3 transition duration-300"
       >
         {item.label}
-      </a>
+      </Link>
      </li>
     ))}
         </ul>

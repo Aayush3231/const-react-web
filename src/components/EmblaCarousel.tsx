@@ -88,7 +88,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                <div className="embla__slide__text top-[-5rem] sm:top-0">
                 <AnimatePresence
                 initial={false}
-                mode="popLayout"
+                mode="wait"
                 onExitComplete={()=>null}
                 >
                <InView triggerOnce>

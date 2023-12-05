@@ -1,8 +1,10 @@
 import { sideright1 } from "../assets/images"
-
-const AboutUs = () => {
+import ReactWOW from 'react-wow';
+// import 'animate.css';
+const AboutUs = () =>  {
   return (
-    <div className="grid gap-5 md:flex md:gap-20 lg:px-20 justify-center wow slideInleft pt-4 " data-wow-duration="2s" data-wow-delay="5s">
+    <ReactWOW animation="fadeInLeft" duration="5s" delay="0.5s" scroll >
+    <div className="grid gap-5 md:flex md:gap-20 lg:px-20 justify-center pt-4 ">
         <div className="pt-16 sm:w-2/6 w-full">
             <div className="contents">
                 <h3 className="font-starlight font-semibold text-5xl text-blue-500 pb-3 mb-8 sm:text-left text-center">About Us</h3>
@@ -14,6 +16,7 @@ const AboutUs = () => {
             <img className="object-cover" src={ sideright1 }/>
         </div>
     </div>
+    </ReactWOW>
   );
 }
 export default AboutUs
